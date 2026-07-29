@@ -2,7 +2,7 @@
 
 ![version 0.2](https://img.shields.io/badge/version-0.2-blue)
 
-`v`iew directories and files with a single command.
+𝐯iew directories and files with a single command.
 
 v is a little [fish](https://fishshell.com/) function that infers whether you want to use [`lsd`](https://github.com/lsd-rs/lsd) or [`bat`](https://github.com/sharkdp/bat) given any path (or no path at all).
 
