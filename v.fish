@@ -4,7 +4,7 @@
 function v
     set -l options 'L/lsd=' 'B/bat=' 'h/help' 'v/version'
     
-    set -l ver '0.1'
+    set -l ver '0.2'
     set -l domain 'dandelion.computer'
     
     argparse $options -- $argv
@@ -37,7 +37,7 @@ function v
         set -l lsd_flags (string split " " -- $_flag_L)
         lsd $lsd_flags "$target"
     else if test -f "$target"
-        set -l bat_flags (string split " " -- $_flag_C)
+        set -l bat_flags (string split " " -- $_flag_B)
         bat $bat_flags "$target"
     else
         set -l lsd_flags (string split " " -- $_flag_L)
