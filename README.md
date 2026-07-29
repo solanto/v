@@ -59,4 +59,4 @@ If you fork v, be sure to change [`domain` in the `v` function](v.fish#L8) to yo
 
 ## license
 
-[GNU General Public License v3.0 or later](https://spdx.org/licenses/GPL-3.0-or-later.html). See license in [`LICENSE.md`](LICENSE.md).
+[GNU General Public License v3.0 or later](https://spdx.org/licenses/GPL-3.0-or-later.html), unless otherwise stated. See the GPLv3 license in [`LICENSE.md`](LICENSE.md).
