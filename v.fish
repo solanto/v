@@ -1,7 +1,6 @@
 # SPDX-FileCopyrightText: © 2026 dandelion.computer
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-
 function v
     set -l options 'L/lsd=' 'B/bat=' 'h/help' 'v/version'
     

@@ -53,7 +53,7 @@ See version info with `--version` (`-v`) and a help message with `--help` (`-h`)
 
 Feel free to ask questions or make suggestions here or at [person@dandelion.computer](mailto:person@dandelion.computer). I'll do my best to collaborate with those who'd like to!
 
-If you fork v, be sure to change [`domain` in the `v` function](v.fish#L5) to your own domain (which could even be something like `your-username.github.io`) to make it clear as to whose code anyone is running.
+If you fork v, be sure to change [`domain` in the `v` function](v.fish#L8) to your own domain (which could even be something like `your-username.github.io`) to make it clear as to whose code anyone is running.
 
 ## license
 
