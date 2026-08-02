@@ -4,7 +4,7 @@
 function v --description '🔎✨ view anything'
     set -l options 'l/lsd=' 'b/bat=' 'n/no-xdg' 'h/help' 'v/version'
     
-    set -l ver '0.5'
+    set -l ver '0.6'
     set -l domain 'dandelion.computer'
     
     argparse $options -- $argv
@@ -51,28 +51,3 @@ function v --description '🔎✨ view anything'
         lsd $lsd_flags "$target"
     end
 end
-
-function __v_complete_lsd
-    set -l token (commandline -ct)
-    set -l clean_token (string replace -r '^[\"\']' '' -- $token)
-    
-    complete -C "lsd $clean_token"
-    complete -C "ls $clean_token"
-end
-
-function __v_complete_bat
-    set -l token (commandline -ct)
-    set -l clean_token (string replace -r '^[\"\']' '' -- $token)
-    
-    complete -C "bat $clean_token"
-end
-
-complete -c v -f -n "__fish_seen_subcommand_from -l --lsd" -a "(__v_complete_lsd)"
-complete -c v -f -n "__fish_seen_subcommand_from -b --bat" -a "(__v_complete_bat)"
-
-complete -c v -f -n "__fish_use_subcommand" -s l -l lsd -d "pass flags to lsd"
-complete -c v -f -n "__fish_use_subcommand" -s b -l bat -d "pass flags to bat"
-
-complete -c v -s n -l no-xdg -d "don't use xdg-open"
-complete -c v -s v -l version -d "show version info"
-complete -c v -s h -l help -d "show help message"
