@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: © 2026 dandelion.computer
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-function v
+function v --description '🔎✨ view anything'
     set -l options 'l/lsd=' 'b/bat=' 'n/no-xdg' 'h/help' 'v/version'
     
-    set -l ver '0.4'
+    set -l ver '0.5'
     set -l domain 'dandelion.computer'
     
     argparse $options -- $argv

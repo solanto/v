@@ -1,6 +1,6 @@
 # <img src="misc/icon.svg" alt="v" height="64" width="auto" style="height: 2em">
 
-![version 0.4](https://img.shields.io/badge/version-0.4-blue)
+![version 0.5](https://img.shields.io/badge/version-0.5-blue)
 
 𝐯iew directories and files with a single command.
 
@@ -19,7 +19,7 @@ You'll also need [xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils
 In a fish shell, run:
 
 ```fish
-begin; set -l install_path ~/.config/fish/functions/v.fish; curl -o $install_path https://raw.githubusercontent.com/solanto/v/refs/heads/main/v.fish && source $install_path; end
+begin; set -l install_path ~/.config/fish/functions/v.fish; curl -o $install_path https://raw.githubusercontent.com/solanto/v/refs/heads/main/functions/v.fish && source $install_path; end
 ```
 
 Like how many distros alias `la` to `ls -al`, an abbreviation like `vv` might be helpful.
