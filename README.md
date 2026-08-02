@@ -62,7 +62,7 @@ Pass any supported options to `lsd` with `--lsd` (`-l`) and to `bat` with `--bat
 
 ```fish
 v --lsd -al ~/Documents
-v -L -al -B -s doc.typst
+v -l -al -b -s doc.typst
 ```
 
 Tell v you don't want to use `xdg-open` with `--no-xdg` (`-n`).
