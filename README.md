@@ -1,6 +1,6 @@
 # <img src="misc/icon.svg" alt="v" height="64" width="auto" style="height: 2em">
 
-![version 0.2](https://img.shields.io/badge/version-0.2-blue)
+![version 0.4](https://img.shields.io/badge/version-0.4-blue)
 
 𝐯iew directories and files with a single command.
 
