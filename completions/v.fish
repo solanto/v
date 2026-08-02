@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: © 2026 dandelion.computer
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 function __v_complete_lsd
     set -l token (commandline -ct)
     set -l clean_token (string replace -r '^[\"\']' '' -- $token)
