@@ -2,9 +2,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 function v
-    set -l options 'L/lsd=' 'B/bat=' 'h/help' 'v/version'
+    set -l options 'l/lsd=' 'b/bat=' 'n/no-xdg' 'h/help' 'v/version'
     
-    set -l ver '0.2'
+    set -l ver '0.3'
     set -l domain 'dandelion.computer'
     
     argparse $options -- $argv
@@ -14,8 +14,9 @@ function v
         echo "Usage: v [OPTIONS] [TARGET]"
         echo
         echo "Options:"
-        echo "  -L, --lsd=FLAGS    pass FLAGS to lsd when TARGET is a directory"
-        echo "  -B, --bat=FLAGS    pass FLAGS to bat when TARGET is a file"
+        echo "  -l, --lsd=FLAGS    pass FLAGS to lsd when TARGET is a directory"
+        echo "  -b, --bat=FLAGS    pass FLAGS to bat when TARGET is a file"
+        echo "  -n, --no-xdg       don't open binary files in xdg-open"
         echo "  -v, --version      show version information and exit"
         echo "  -h, --help         show this help message and exit"
         echo
@@ -34,13 +35,19 @@ function v
     end
 
     if test -d "$target"
-        set -l lsd_flags (string split " " -- $_flag_L)
+        set -l lsd_flags (string split " " -- $_flag_lsd)
         lsd $lsd_flags "$target"
+    else if begin
+        not set -q _flag_no_xdg
+        and set -q DISPLAY
+        and test (file -bL --mime-encoding "$target") = "binary"
+    end
+        xdg-open "$target"
     else if test -f "$target"
-        set -l bat_flags (string split " " -- $_flag_B)
+        set -l bat_flags (string split " " -- $_flag_bat)
         bat $bat_flags "$target"
     else
-        set -l lsd_flags (string split " " -- $_flag_L)
+        set -l lsd_flags (string split " " -- $_flag_lsd)
         lsd $lsd_flags "$target"
     end
 end
@@ -60,11 +67,11 @@ function __v_complete_bat
     complete -C "bat $clean_token"
 end
 
-complete -c v -f -n "__fish_seen_subcommand_from -L --lsd" -a "(__v_complete_lsd)"
-complete -c v -f -n "__fish_seen_subcommand_from -B --bat" -a "(__v_complete_bat)"
+complete -c v -f -n "__fish_seen_subcommand_from -l --lsd" -a "(__v_complete_lsd)"
+complete -c v -f -n "__fish_seen_subcommand_from -b --bat" -a "(__v_complete_bat)"
 
-complete -c v -f -n "__fish_use_subcommand" -s L -l lsd -d "pass flags to lsd"
-complete -c v -f -n "__fish_use_subcommand" -s B -l bat -d "pass flags to bat"
+complete -c v -f -n "__fish_use_subcommand" -s l -l lsd -d "pass flags to lsd"
+complete -c v -f -n "__fish_use_subcommand" -s b -l bat -d "pass flags to bat"
 
 complete -c v -s v -l version -d "show version info"
 complete -c v -s h -l help -d "show help message"
