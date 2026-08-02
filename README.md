@@ -42,7 +42,7 @@ Show a text file—like `~/Documents/hello.md`—with `bat`:
 v ~/Documents/hello.md
 ```
 
-Show an image—like `~/Pictures/me.jpeg`—with your default image viewer.
+Show an image—like `~/Pictures/me.jpeg`—with your default image viewer:
 
 ```fish
 v ~/Pictures/me.jpeg
