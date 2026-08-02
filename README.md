@@ -22,6 +22,13 @@ In a fish shell, run:
 begin; set -l install_path ~/.config/fish/functions/v.fish; curl -o $install_path https://raw.githubusercontent.com/solanto/v/refs/heads/main/v.fish && source $install_path; end
 ```
 
+Like how many distros alias `la` to `ls -al`, an abbreviation like `vv` might be helpful.
+
+```fish
+echo -e "\nabbr -a -- va 'v -l -al'" >> ~/.config/fish/conf.d/abbreviations.fish
+source ~/.config/fish/conf.d/abbreviations.fish
+```
+
 ## usage
 
 Show the current directory with `lsd`:
