@@ -16,10 +16,11 @@ You'll also need [xdg-utils](https://www.freedesktop.org/wiki/Software/xdg-utils
 
 ## installing
 
-In a fish shell, run:
+Use [fisher](https://github.com/jorgebucaran/fisher) to install v! 🐟️❤️
+
 
 ```fish
-begin; set -l install_path ~/.config/fish/functions/v.fish; curl -o $install_path https://raw.githubusercontent.com/solanto/v/refs/heads/main/functions/v.fish && source $install_path; end
+fisher install solanto/v
 ```
 
 Like how many distros alias `la` to `ls -al`, an abbreviation like `vv` might be helpful.
