@@ -25,7 +25,7 @@ begin; set -l install_path ~/.config/fish/functions/v.fish; curl -o $install_pat
 Like how many distros alias `la` to `ls -al`, an abbreviation like `vv` might be helpful.
 
 ```fish
-echo -e "\nabbr -a -- va 'v -l -al'" >> ~/.config/fish/conf.d/abbreviations.fish
+echo -e "\nabbr -a -- vv 'v -l -al'" >> ~/.config/fish/conf.d/abbreviations.fish
 source ~/.config/fish/conf.d/abbreviations.fish
 ```
 
